@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 导入页面特定的样式 */
+@import './styles/login.css'; 

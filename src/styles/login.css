@@ -1,0 +1,185 @@
+/* 重置背景样式 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 登录页容器 */
+  .login-container {
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 登录框 */
+  .login-box {
+    background: white;
+    width: 380px;
+    padding: 3rem 2.5rem;
+    border-radius: 8px; /* 增加圆角 */
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+    /* 移除 transform: translateY(-2vh); */
+  }
+  
+  /* 标题动画 */
+  .typing-title {
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 2.25rem; /* 36px */
+    text-align: center;
+    position: relative;
+    width: 0;
+    margin: 0 auto 0.5rem;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+      typing 2.5s steps(7, end) forwards,
+      blink 0.8s step-end infinite;
+  }
+  
+  /* 副标题 */
+  .login-subtitle {
+    text-align: center;
+    font-size: 0.875rem; /* 14px */
+    margin-bottom: 3rem; /* 48px */
+    color: #666;
+    letter-spacing: 3px;
+    font-weight: 300;
+  }
+  
+  /* 输入框组 */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* 24px */
+    margin-bottom: 2.5rem; /* 40px */
+  }
+  
+  /* 输入框 */
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 0; /* 12px */
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #000;
+    transition: all 0.3s;
+  }
+  
+  .input-field::placeholder {
+    color: #999;
+    font-weight: 300;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-bottom: 1px solid #000;
+  }
+  
+  /* 复选框组 */
+  .checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem; /* 40px */
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 复选框 */
+  .checkbox-input {
+    width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+    appearance: none;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .checkbox-input:checked {
+    background: black;
+    border-color: black;
+  }
+  
+  .checkbox-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .checkbox-label {
+    margin-left: 0.5rem; /* 8px */
+    font-size: 0.75rem; /* 12px */
+    color: #666;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  /* 登录按钮 */
+  .login-button {
+    width: 100%;
+    padding: 0.75rem; /* 12px */
+    font-size: 0.875rem; /* 14px */
+    font-weight: 300;
+    background: #000;
+    color: white;
+    border: none;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .login-button:hover {
+    background: #111;
+  }
+  
+  .login-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* 错误信息 */
+  .error-message {
+    margin-top: 1rem; /* 16px */
+    text-align: center;
+    font-size: 0.75rem; /* 12px */
+    color: red;
+  }
+  
+  /* 动画定义 */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 7ch }
+  }
+  
+  @keyframes blink {
+    from, to { border-right: 2px solid transparent }
+    50% { border-right: 2px solid #000 }
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 640px) {
+    .login-box {
+      width: 90%;
+      max-width: 380px;
+      padding: 2rem 1.5rem;
+    }
+  }
